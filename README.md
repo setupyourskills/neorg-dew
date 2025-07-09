@@ -19,6 +19,12 @@ You can use just one module, combine several, or build your own system around th
 { "setupyourskills/neorg-dew" }
 ```
 
+## Configuration
+
+```lua
+["external.neorg-dew"] = {}
+```
+
 ## Available submodules
 
 🚧 **This project is under active and continuous development.**  
