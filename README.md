@@ -28,8 +28,8 @@ Currently, a few modules are available and in progress:
 
 | Module                | Status       | Description                                                    |
 |-----------------------|--------------|----------------------------------------------------------------|
-| `neorg-dew-crumb`     | 🔧 In dev    | Displays breadcrumbs from headings and the Title                 |
-| `neorg-dew-catngo`    | 🔧 In dev    | Quick and simple note picker focused on category-based selection |
+| [neorg-dew-crumb](https://github.com/setupyourskills/neorg-dew-crumb)     | 🔧 In dev    | Displays breadcrumbs from headings and the Title                 |
+| [neorg-dew-catngo](https://github.com/setupyourskills/neorg-dew-catngo)    | 🔧 In dev    | Quick and simple note picker focused on category-based selection |
 
 ## Collaboration and Compatibility
 
