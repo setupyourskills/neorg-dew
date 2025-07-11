@@ -30,10 +30,10 @@ You can use just one module, combine several, or build your own system around th
 🚧 **This project is under active and continuous development.**  
 Currently, a few modules are available and under development:
 
-| Module              | Description                                                      |
-|---------------------|------------------------------------------------------------------|
-| [neorg-dew-crumb](https://github.com/setupyourskills/neorg-dew-crumb)     | Displays breadcrumbs from headings and the Title                 |
-| [neorg-dew-catngo](https://github.com/setupyourskills/neorg-dew-catngo)    | Quick and simple note picker focused on category-based selection |
+| Module     | Description                                                      |
+|------------|------------------------------------------------------------------|
+| [dew-crumb](https://github.com/setupyourskills/dew-crumb)  | Displays breadcrumbs from headings and the Title                 |
+| [dew-catngo](https://github.com/setupyourskills/dew-catngo) | Quick and simple note picker focused on category-based selection |
 
 ## Public API
 
