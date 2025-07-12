@@ -30,10 +30,11 @@ You can use just one module, combine several, or build your own system around th
 🚧 **This project is under active and continuous development.**  
 Currently, a few modules are available and under development:
 
-| Module     | Description                                                      |
-|------------|------------------------------------------------------------------|
-| [dew-crumb](https://github.com/setupyourskills/dew-crumb)  | Displays breadcrumbs from headings and the Title                 |
-| [dew-catngo](https://github.com/setupyourskills/dew-catngo) | Quick and simple note picker focused on category-based selection |
+| Module        | Description                                                                           |
+|---------------|---------------------------------------------------------------------------------------|
+| [dew-crumb](https://github.com/setupyourskills/dew-crumb)     | Displays breadcrumbs from headings and the Title                                      |
+| [dew-catngo](https://github.com/setupyourskills/dew-catngo)    | Quick and simple note picker focused on category-based selection                      |
+| [dew-smartlink](https://github.com/setupyourskills/dew-catngo) | Automatically inserts a formatted link using the clipboard URL and fetched page title |
 
 ## Public API
 
