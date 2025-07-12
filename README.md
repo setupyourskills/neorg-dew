@@ -34,7 +34,7 @@ Currently, a few modules are available and under development:
 |---------------|---------------------------------------------------------------------------------------|
 | [dew-crumb](https://github.com/setupyourskills/dew-crumb)     | Displays breadcrumbs from headings and the Title                                      |
 | [dew-catngo](https://github.com/setupyourskills/dew-catngo)    | Quick and simple note picker focused on category-based selection                      |
-| [dew-smartlink](https://github.com/setupyourskills/dew-catngo) | Automatically inserts a formatted link using the clipboard URL and fetched page title |
+| [dew-smartlink](https://github.com/setupyourskills/dew-smartlink) | Automatically inserts a formatted link using the clipboard URL and fetched page title |
 
 ## Public API
 
