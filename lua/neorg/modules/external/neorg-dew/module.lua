@@ -10,6 +10,32 @@ local action_state = require "telescope.actions.state"
 local module = modules.create "external.neorg-dew"
 
 module.public = {
+  wrap_text = function(text, limit, prefix)
+    local result = {}
+    local current_line = ""
+
+    for word in text:gmatch "%S+" do
+      if #current_line + #word + 1 > limit then
+        table.insert(result, current_line)
+        current_line = word
+      else
+        current_line = current_line == "" and word or current_line .. " " .. word
+      end
+    end
+
+    if #current_line > 0 then
+      table.insert(result, current_line)
+    end
+
+    if prefix then
+      for i = 1, #result do
+        result[i] = prefix .. result[i]
+      end
+    end
+
+    return result
+  end,
+
   telescope_picker = function(prompt, items, opts, map_callback)
     pickers
       .new({}, {
