@@ -35,7 +35,7 @@ Currently, a few modules are available and under development:
 | [Dew CatnGo](https://github.com/setupyourskills/dew-catngo)     | Quick and simple note picker focused on category-based selection                      |
 | [Dew Crumb](https://github.com/setupyourskills/dew-crumb)      | Displays breadcrumbs from headings and the Title                                      |
 | [Dew Highlights](https://github.com/setupyourskills/dew-highlights) | Customizes Tree-sitter highlight groups in `.norg` files                                |
-| [Dew Smartlink](https://github.com/setupyourskills/dew-smartlink)  | Automatically inserts a formatted link using the clipboard URL and fetched page title |
+| [Dew Smart Link](https://github.com/setupyourskills/dew-smartlink)  | Automatically inserts a formatted link using the clipboard URL and fetched page title |
 
 ## Public API
 
