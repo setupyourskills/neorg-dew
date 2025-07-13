@@ -30,20 +30,51 @@ You can use just one module, combine several, or build your own system around th
 🚧 **This project is under active and continuous development.**  
 Currently, a few modules are available and under development:
 
-| Module         | Description                                                                           |
-|----------------|---------------------------------------------------------------------------------------|
-| [Dew CatnGo](https://github.com/setupyourskills/dew-catngo)     | Quick and simple note picker focused on category-based selection                      |
-| [Dew Crumb](https://github.com/setupyourskills/dew-crumb)      | Displays breadcrumbs from headings and the Title                                      |
-| [Dew Highlights](https://github.com/setupyourskills/dew-highlights) | Customizes Tree-sitter highlight groups in `.norg` files                                |
-| [Dew Smart Link](https://github.com/setupyourskills/dew-smartlink)  | Automatically inserts a formatted link using the clipboard URL and fetched page title |
+| Module            | Description                                                                           |
+|-------------------|---------------------------------------------------------------------------------------|
+| [Dew CatnGo](https://github.com/setupyourskills/dew-catngo)        | Quick and simple note picker focused on category-based selection                      |
+| [Dew Crumb](https://github.com/setupyourskills/dew-crumb)         | Displays breadcrumbs from headings and the Title                                      |
+| [Dew Highlights](https://github.com/setupyourskills/dew-highlights)    | Customizes Tree-sitter highlight groups in `.norg` files                                |
+| [Dew Random Quote](https://github.com/setupyourskills/dew-randomquote)  | Inserts a randomly fetched quote into the current buffer                              |
+| [Dew Smart Link](https://github.com/setupyourskills/dew-smartlink)    | Automatically inserts a formatted link using the clipboard URL and fetched page title |
 
 ## Public API
+
+### `wrap_text`
+
+This module exposes a public helper function `wrap_text`, which formats a long string into a list of wrapped lines with an optional prefix.
+
+#### Parameters
+
+- `text` (`string`): The input string you want to wrap (e.g. a long quote or paragraph).
+
+- `limit` (`integer`): The maximum number of characters per line before wrapping.
+
+- `prefix` (`string`, optional): A string prepended to the beginning of each wrapped line (e.g. ">> " or "- "). If omitted, no prefix is added.
+
+##### Returns
+
+(`table<string>`): A list of strings, each representing a line of wrapped text (with prefix if provided).
+
+#### Example usage
+
+```lua
+local wrapped = wrap_text("The quick brown fox jumps over the lazy dog", 10, ">> ")
+-- Result:
+-- {
+--   ">> The quick",
+--   ">> brown fox",
+--   ">> jumps over",
+--   ">> the lazy",
+--   ">> dog"
+-- }
+```
 
 ### `telescope_picker(prompt, items, opts, map_callback)`
 
 This module exposes a public helper function `telescope_picker`, which acts as a generic and reusable Telescope interface for Neorg-related selections.
 
-#### Parameters:
+#### Parameters
 
 - `prompt` (`string`): The title shown at the top of the Telescope picker.
 
