@@ -59,7 +59,7 @@ This module exposes a public helper function `wrap_text`, which formats a long s
 #### Example usage
 
 ```lua
-local wrapped = wrap_text("The quick brown fox jumps over the lazy dog", 10, ">> ")
+local wrapped = require("neorg.core.modules").get_module("external.neorg-dew").wrap_text("The quick brown fox jumps over the lazy dog", 10, ">> ")
 -- Result:
 -- {
 --   ">> The quick",
