@@ -32,10 +32,10 @@ Currently, a few modules are available and under development:
 
 | Module         | Description                                                                           |
 |----------------|---------------------------------------------------------------------------------------|
-| [dew-catngo](https://github.com/setupyourskills/dew-catngo)     | Quick and simple note picker focused on category-based selection                      |
-| [dew-crumb](https://github.com/setupyourskills/dew-crumb)      | Displays breadcrumbs from headings and the Title                                      |
-| [dew-highlights](https://github.com/setupyourskills/dew-highlights) | Customizes Tree-sitter highlight groups in `.norg` files                                |
-| [dew-smartlink](https://github.com/setupyourskills/dew-smartlink)  | Automatically inserts a formatted link using the clipboard URL and fetched page title |
+| [Dew Catngo](https://github.com/setupyourskills/dew-catngo)     | Quick and simple note picker focused on category-based selection                      |
+| [Dew Crumb](https://github.com/setupyourskills/dew-crumb)      | Displays breadcrumbs from headings and the Title                                      |
+| [Dew Highlights](https://github.com/setupyourskills/dew-highlights) | Customizes Tree-sitter highlight groups in `.norg` files                                |
+| [Dew Smartlink](https://github.com/setupyourskills/dew-smartlink)  | Automatically inserts a formatted link using the clipboard URL and fetched page title |
 
 ## Public API
 
