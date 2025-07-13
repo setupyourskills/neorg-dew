@@ -1,6 +1,6 @@
-# neorg-dew
+# Neorg Dew
 
-🌿 **neorg-dew** is a collection of minimal, purpose-driven extensions for [Neorg](https://github.com/nvim-neorg/neorg), designed around a personal and efficient workflow.
+🌿 **Neorg Dew** is a collection of minimal, purpose-driven extensions for [Neorg](https://github.com/nvim-neorg/neorg), designed around a personal and efficient workflow.
 
 Each submodule depends on the core **neorg-dew** module, which provides essential base libraries and utilities.  
 This design keeps individual modules lightweight and focused, avoiding unnecessary code duplication.
