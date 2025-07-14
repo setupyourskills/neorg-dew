@@ -16,7 +16,12 @@ You can use just one module, combine several, or build your own system around th
 ### Using Lazy.nvim
 
 ```lua
-{ "setupyourskills/neorg-dew" }
+{
+  "setupyourskills/neorg-dew",
+  dependencies = {
+    "nvim-telescope/telescope.nvim",
+  },
+}
 ```
 
 ## Configuration
