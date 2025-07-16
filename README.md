@@ -46,6 +46,39 @@ Currently, a few modules are available and under development:
 
 ## Public API
 
+### `get_title`
+
+This module exposes a helper function `get_title`, which extracts the `title` metadata from a @document.meta block in a Neorg file.
+It can read either directly from the current buffer or from the file on disk, depending on the provided boolean flag.
+
+#### Parameters
+
+- `from_file` (`boolean`):
+
+    - If `true`, the function reads the file content from disk 
+
+    - If `false` it reads the title directly from the current buffer.
+
+##### Returns
+
+- `string` | `nil`:
+
+    - The value of the `title` within de metadatas.
+
+    - Returns `nil` if the title is not found or if the file cannot be read.
+
+#### Example usage
+```lua
+
+local get_title = require("neorg.core.modules").get_module("external.neorg-dew").get_title()
+
+-- From buffer (unsaved content supported)
+local my_current_buffer_title = get_title()
+
+-- From saved file on disk (useful to extract the title from another file)
+local my_new_file_title = get_title(true)
+```
+
 ### `wrap_text`
 
 This module exposes a public helper function `wrap_text`, which formats a long string into a list of wrapped lines with an optional prefix.
