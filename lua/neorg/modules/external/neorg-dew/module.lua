@@ -10,6 +10,39 @@ local action_state = require "telescope.actions.state"
 local module = modules.create "external.neorg-dew"
 
 module.public = {
+  get_title = function(from_file)
+    local lines = {}
+
+    if from_file then
+      local filepath = vim.api.nvim_buf_get_name(0)
+      local f = io.open(filepath, "r")
+      if not f then
+        return nil
+      end
+      for line in f:lines() do
+        table.insert(lines, line)
+      end
+      f:close()
+    else
+      lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+    end
+
+    local in_meta = false
+
+    for _, line in ipairs(lines) do
+      if line:match "^@document%.meta" then
+        in_meta = true
+      elseif line:match "^@end" and in_meta then
+        break
+      elseif in_meta then
+        local matched = line:match "^title:%s*(.+)"
+        if matched then
+          return matched
+        end
+      end
+    end
+  end,
+
   wrap_text = function(text, limit, prefix)
     local result = {}
     local current_line = ""
