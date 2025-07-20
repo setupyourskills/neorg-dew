@@ -10,6 +10,25 @@ local action_state = require "telescope.actions.state"
 local module = modules.create "external.neorg-dew"
 
 module.public = {
+  read_file = function(path)
+    local content = {}
+
+    local file = io.open(path, "r")
+
+    if not file then
+      vim.notify("Could not open file: " .. path, vim.log.levels.ERROR)
+      return nil
+    end
+
+    for line in file:lines() do
+      table.insert(content, line)
+    end
+
+    file:close()
+
+    return content
+  end,
+
   get_title = function(from_file)
     local lines = {}
 
