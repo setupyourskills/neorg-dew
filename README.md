@@ -46,7 +46,7 @@ Currently, a few modules are available and under development:
 
 ## Public API
 
-### `get_title`
+### `get_title(from_file)`
 
 This module exposes a helper function `get_title`, which extracts the `title` metadata from a @document.meta block in a Neorg file.
 It can read either directly from the current buffer or from the file on disk, depending on the provided boolean flag.
@@ -79,7 +79,7 @@ local my_current_buffer_title = get_title()
 local my_new_file_title = get_title(true)
 ```
 
-### `read_file`
+### `read_file(path)`
 
 This module exposes a helper function read_file, which opens a file from the filesystem and returns its content as a list of lines.
 
@@ -155,7 +155,7 @@ require("neorg.core.modules").get_module("external.neorg-dew").telescope_picker(
   )
 ```
 
-### `wrap_text`
+### `wrap_text(text, limit, prefix)`
 
 This module exposes a public helper function `wrap_text`, which formats a long string into a list of wrapped lines with an optional prefix.
 
