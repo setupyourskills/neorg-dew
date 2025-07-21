@@ -79,6 +79,34 @@ local my_current_buffer_title = get_title()
 local my_new_file_title = get_title(true)
 ```
 
+### `read_file`
+
+This module exposes a helper function read_file, which opens a file from the filesystem and returns its content as a list of lines.
+
+#### Parameters
+
+`path` (`string`): The absolute or relative path to the file you want to read.
+
+##### Returns
+
+- `string[]` | `nil`:
+
+    - A table of strings, where each item corresponds to a line in the file.
+
+    - Returns `nil` if the file does not exist or cannot be opened.
+
+#### Example usage
+
+```lua
+local lines = require("neorg.core.modules").get_module("external.neorg-dew").read_file("/home/user/notes/my_note.norg")
+
+if lines then
+  for _, line in ipairs(lines) do
+    print(line)
+  end
+end
+```
+
 ### `telescope_picker(prompt, items, opts, map_callback)`
 
 This module exposes a public helper function `telescope_picker`, which acts as a generic and reusable Telescope interface for Neorg-related selections.
