@@ -79,36 +79,6 @@ local my_current_buffer_title = get_title()
 local my_new_file_title = get_title(true)
 ```
 
-### `wrap_text`
-
-This module exposes a public helper function `wrap_text`, which formats a long string into a list of wrapped lines with an optional prefix.
-
-#### Parameters
-
-- `text` (`string`): The input string you want to wrap (e.g. a long quote or paragraph).
-
-- `limit` (`integer`): The maximum number of characters per line before wrapping.
-
-- `prefix` (`string`, optional): A string prepended to the beginning of each wrapped line (e.g. ">> " or "- "). If omitted, no prefix is added.
-
-##### Returns
-
-(`table<string>`): A list of strings, each representing a line of wrapped text (with prefix if provided).
-
-#### Example usage
-
-```lua
-local wrapped = require("neorg.core.modules").get_module("external.neorg-dew").wrap_text("The quick brown fox jumps over the lazy dog", 10, ">> ")
--- Result:
--- {
---   ">> The quick",
---   ">> brown fox",
---   ">> jumps over",
---   ">> the lazy",
---   ">> dog"
--- }
-```
-
 ### `telescope_picker(prompt, items, opts, map_callback)`
 
 This module exposes a public helper function `telescope_picker`, which acts as a generic and reusable Telescope interface for Neorg-related selections.
@@ -155,6 +125,36 @@ require("neorg.core.modules").get_module("external.neorg-dew").telescope_picker(
       return true
     end
   )
+```
+
+### `wrap_text`
+
+This module exposes a public helper function `wrap_text`, which formats a long string into a list of wrapped lines with an optional prefix.
+
+#### Parameters
+
+- `text` (`string`): The input string you want to wrap (e.g. a long quote or paragraph).
+
+- `limit` (`integer`): The maximum number of characters per line before wrapping.
+
+- `prefix` (`string`, optional): A string prepended to the beginning of each wrapped line (e.g. ">> " or "- "). If omitted, no prefix is added.
+
+##### Returns
+
+(`table<string>`): A list of strings, each representing a line of wrapped text (with prefix if provided).
+
+#### Example usage
+
+```lua
+local wrapped = require("neorg.core.modules").get_module("external.neorg-dew").wrap_text("The quick brown fox jumps over the lazy dog", 10, ">> ")
+-- Result:
+-- {
+--   ">> The quick",
+--   ">> brown fox",
+--   ">> jumps over",
+--   ">> the lazy",
+--   ">> dog"
+-- }
 ```
 
 ## Collaboration and Compatibility
