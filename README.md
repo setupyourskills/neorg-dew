@@ -79,6 +79,37 @@ local my_current_buffer_title = get_title()
 local my_new_file_title = get_title(true)
 ```
 
+### `level_up(line, levels)`
+
+This module exposes a helper function `level_up` is used to increase the heading level of a Neorg line by a specified number of levels.
+
+#### Parameters
+
+- `line` (`string`): The function checks if the line of text begins with stars (*) after optional indentation, and increments the number of stars accordingly.
+
+- `levels` (`integer`, optional):
+
+    - The number of levels to increment.
+
+    - Defaults to 1 if omitted.
+
+#### Returns
+
+`string`: The same line, with the heading level incremented by one (if eligible).
+
+#### Example usage
+
+```lua
+local level_up = require("neorg.core.modules").get_module("external.neorg-dew").level_up
+
+local line = "  *** My heading"
+local new_line = level_up(line)
+
+print(new_line)
+
+-- Output: "  **** My heading
+```
+
 ### `read_file(path)`
 
 This module exposes a helper function read_file, which opens a file from the filesystem and returns its content as a list of lines.
