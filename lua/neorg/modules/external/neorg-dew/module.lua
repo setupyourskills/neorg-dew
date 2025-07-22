@@ -43,9 +43,11 @@ module.public = {
     end
   end,
 
-  level_up = function(line)
+  level_up = function(line, levels)
+    levels = levels or 1
+
     return line:gsub("^(%s*)(%*+)(%s+)", function(indent, stars, space)
-      return indent .. string.rep("*", #stars + 1) .. space
+      return indent .. string.rep("*", #stars + levels) .. space
     end)
   end,
 
