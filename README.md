@@ -103,11 +103,11 @@ This module exposes a helper function `level_up` is used to increase the heading
 local level_up = require("neorg.core.modules").get_module("external.neorg-dew").level_up
 
 local line = "  *** My heading"
-local new_line = level_up(line)
+local new_line = level_up(line, 2)
 
 print(new_line)
 
--- Output: "  **** My heading
+-- Output: "  ***** My heading
 ```
 
 ### `read_file(path)`
