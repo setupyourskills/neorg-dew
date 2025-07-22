@@ -10,25 +10,6 @@ local action_state = require "telescope.actions.state"
 local module = modules.create "external.neorg-dew"
 
 module.public = {
-  read_file = function(path)
-    local content = {}
-
-    local file = io.open(path, "r")
-
-    if not file then
-      vim.notify("Could not open file: " .. path, vim.log.levels.ERROR)
-      return nil
-    end
-
-    for line in file:lines() do
-      table.insert(content, line)
-    end
-
-    file:close()
-
-    return content
-  end,
-
   get_title = function(from_file)
     local lines = {}
 
@@ -62,6 +43,53 @@ module.public = {
     end
   end,
 
+  level_up = function(line)
+    return line:gsub("^(%s*)(%*+)(%s+)", function(indent, stars, space)
+      return indent .. string.rep("*", #stars + 1) .. space
+    end)
+  end,
+
+  read_file = function(path)
+    local content = {}
+
+    local file = io.open(path, "r")
+
+    if not file then
+      vim.notify("Could not open file: " .. path, vim.log.levels.ERROR)
+      return nil
+    end
+
+    for line in file:lines() do
+      table.insert(content, line)
+    end
+
+    file:close()
+
+    return content
+  end,
+
+  telescope_picker = function(prompt, items, opts, map_callback)
+    pickers
+      .new({}, {
+        prompt_title = prompt,
+        finder = finders.new_table {
+          results = items,
+          entry_maker = function(entry)
+            return {
+              value = opts.entry_value(entry),
+              display = opts.entry_display(entry),
+              ordinal = opts.entry_ordinal(entry),
+            }
+          end,
+        },
+        sorter = conf.generic_sorter {},
+        attach_mappings = function(_, map)
+          return map_callback(map, action_state, actions)
+        end,
+      })
+      :find()
+  end,
+
   wrap_text = function(text, limit, prefix)
     local result = {}
     local current_line = ""
@@ -86,28 +114,6 @@ module.public = {
     end
 
     return result
-  end,
-
-  telescope_picker = function(prompt, items, opts, map_callback)
-    pickers
-      .new({}, {
-        prompt_title = prompt,
-        finder = finders.new_table {
-          results = items,
-          entry_maker = function(entry)
-            return {
-              value = opts.entry_value(entry),
-              display = opts.entry_display(entry),
-              ordinal = opts.entry_ordinal(entry),
-            }
-          end,
-        },
-        sorter = conf.generic_sorter {},
-        attach_mappings = function(_, map)
-          return map_callback(map, action_state, actions)
-        end,
-      })
-      :find()
   end,
 }
 
