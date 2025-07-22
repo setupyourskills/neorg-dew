@@ -112,7 +112,7 @@ print(new_line)
 
 ### `read_file(path)`
 
-This module exposes a helper function read_file, which opens a file from the filesystem and returns its content as a list of lines.
+This module exposes a helper function `read_file`, which opens a file from the filesystem and returns its content as a list of lines.
 
 #### Parameters
 
