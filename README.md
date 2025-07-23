@@ -35,14 +35,15 @@ You can use just one module, combine several, or build your own system around th
 🚧 **This project is under active and continuous development.**  
 Currently, a few modules are available and under development:
 
-| Module            | Description                                                                           |
-|-------------------|---------------------------------------------------------------------------------------|
-| [Dew CatnGo](https://github.com/setupyourskills/dew-catngo)        | Quick and simple note picker focused on category-based selection                      |
-| [Dew Crumb](https://github.com/setupyourskills/dew-crumb)         | Displays breadcrumbs from headings and the Title                                      |
-| [Dew Decor Link](https://github.com/setupyourskills/dew-decorlink)    | Inserts custom icons before Neorg link labels using a Telescope-powered picker        |
-| [Dew Highlights](https://github.com/setupyourskills/dew-highlights)    | Customizes Tree-sitter highlight groups in `.norg` files                                |
-| [Dew Random Quote](https://github.com/setupyourskills/dew-randomquote)  | Inserts a randomly fetched quote into the current buffer                              |
-| [Dew Smart Link](https://github.com/setupyourskills/dew-smartlink)    | Automatically inserts a formatted link using the clipboard URL and fetched page title |
+| Module            | Description                                                                              |
+|-------------------|------------------------------------------------------------------------------------------|
+| [Dew CatnGo](https://github.com/setupyourskills/dew-catngo)        | Quick and simple note picker focused on category-based selection                         |
+| [Dew Crumb](https://github.com/setupyourskills/dew-crumb)         | Displays breadcrumbs from headings and the Title                                         |
+| [Dew Decor Link](https://github.com/setupyourskills/dew-decorlink)    | Inserts custom icons before Neorg link labels using a Telescope-powered picker           |
+| [Dew Highlights](https://github.com/setupyourskills/dew-highlights)    | Customizes Tree-sitter highlight groups in `.norg` files                                   |
+| [Dew Random Quote](https://github.com/setupyourskills/dew-randomquote)  | Inserts a randomly fetched quote into the current buffer                                 |
+| [Dew Smart Link](https://github.com/setupyourskills/dew-smartlink)    | Automatically inserts a formatted link using the clipboard URL and fetched page title    |
+| [Dew Transclude](https://github.com/setupyourskills/dew-transclude)    | Automatically embeds the content of a linked note using a `!` prefix before internal links |
 
 ## Public API
 
