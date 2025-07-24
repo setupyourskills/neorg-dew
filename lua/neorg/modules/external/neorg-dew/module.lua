@@ -10,6 +10,13 @@ local action_state = require "telescope.actions.state"
 local module = modules.create "external.neorg-dew"
 
 module.public = {
+  get_line_at_cursor_position = function()
+    local row_position = vim.api.nvim_win_get_cursor(0)[1]
+    local line = vim.api.nvim_buf_get_lines(0, row_position - 1, row_position, false)[1]
+
+    return row_position, line
+  end,
+
   get_title = function(from_file)
     local lines = {}
 
