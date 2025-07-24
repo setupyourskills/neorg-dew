@@ -47,6 +47,28 @@ Currently, a few modules are available and under development:
 
 ## Public API
 
+### `get_line_at_cursor_position()`
+
+This helper function returns the line content under the cursor and its row position in the current buffer.
+
+#### Returns
+
+- `number`, `string`:
+
+    - The row number of the current cursor position
+
+    - The line content at the cursor's current position
+
+#### Example usage
+
+```lua
+local dew = require("neorg.core.modules").get_module("external.neorg-dew")
+
+local row, line = dew.get_line_at_cursor_position()
+print("Cursor is on row:", row)
+print("Line content:", line)
+```
+
 ### `get_title(from_file)`
 
 This module exposes a helper function `get_title`, which extracts the `title` metadata from a @document.meta block in a Neorg file.
