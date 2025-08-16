@@ -42,6 +42,30 @@ Currently, a few modules are available and under development:
 
 ## Public API
 
+### `colorify(buf, ns, hl, start, nb_of_lines)`
+
+This helper function applies a highlight group to a range of lines in a buffer.
+
+#### Parameters
+
+- `buf` (`number`): Target buffer id
+
+- `ns` (`number`): Namespace id for extmarks
+
+- `hl` (`string`): Highlight group name to apply
+
+- `start` (`number`): Starting line number
+
+- `nb_of_lines` (`number`): Number of lines to highlight
+
+#### Example usage
+```lua
+local colorify = require("neorg.core.modules").get_module("external.neorg-dew").colorify
+
+-- Highlight 5 lines starting at line 10 with the "Comment" group
+colorify(0, vim.api.nvim_create_namespace("test"), "Comment", 10, 5)
+```
+
 ### `get_line_at_cursor_position()`
 
 This helper function returns the line content under the cursor and its row position in the current buffer.
