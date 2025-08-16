@@ -1,6 +1,8 @@
 local neorg = require "neorg.core"
 local modules = neorg.modules
 
+local api = vim.api
+
 local pickers = require "telescope.pickers"
 local finders = require "telescope.finders"
 local conf = require("telescope.config").values
@@ -10,6 +12,17 @@ local action_state = require "telescope.actions.state"
 local module = modules.create "external.neorg-dew"
 
 module.public = {
+  colorify = function(buf, ns, hl, start, nb_of_lines)
+    for lnum = start, start + nb_of_lines - 1 do
+      api.nvim_buf_set_extmark(buf, ns, lnum, 0, {
+        end_row = lnum,
+        end_col = #vim.api.nvim_buf_get_lines(0, lnum, lnum + 1, false)[1],
+        hl_group = hl,
+        hl_eol = true,
+      })
+    end
+  end,
+
   get_line_at_cursor_position = function()
     local row_position = vim.api.nvim_win_get_cursor(0)[1]
     local line = vim.api.nvim_buf_get_lines(0, row_position - 1, row_position, false)[1]
