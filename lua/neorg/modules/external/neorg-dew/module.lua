@@ -12,14 +12,19 @@ local action_state = require "telescope.actions.state"
 local module = modules.create "external.neorg-dew"
 
 module.public = {
-  colorify = function(buf, ns, hl, start, nb_of_lines)
-    for lnum = start, start + nb_of_lines - 1 do
-      api.nvim_buf_set_extmark(buf, ns, lnum, 0, {
-        end_row = lnum,
-        end_col = #vim.api.nvim_buf_get_lines(0, lnum, lnum + 1, false)[1],
-        hl_group = hl,
-        hl_eol = true,
-      })
+  colorify = function(buf, ns, hl, start_line, nb_of_lines)
+    for lnum = start_line - 1, start_line + nb_of_lines - 2 do
+      local line = api.nvim_buf_get_lines(0, lnum, lnum + 1, false)[1] or ""
+      local start_col = (line:match "^%s*()" or 1) - 1
+
+      if start_col < #line then
+        api.nvim_buf_set_extmark(buf, ns, lnum, start_col, {
+          end_row = lnum,
+          end_col = #line,
+          hl_group = hl,
+          hl_eol = true,
+        })
+      end
     end
   end,
 
